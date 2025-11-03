@@ -1,0 +1,430 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+background-color: #f35c04;
+color: white;
+padding: 1rem 0;
+position: fixed;
+width: 100%;
+top: 0;
+z-index: 1000;
+box-shadow: none; 
+}
+
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto; 
+    vertical-align: middle;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+    opacity: 1;
+    font-weight: bold;
+}
+
+nav a {
+    opacity: 0.8;
+}
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+section.container .p-4 { 
+    background-color: #ffffff !important; /* Força o fundo branco */
+    border: 1px solid #e0e0e0; /* Borda cinza bem clara para definir a caixa */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mantém a transição do hover */
+}
+
+/* Opcional: Ajuste a cor dos títulos para dar mais contraste */
+.row .h3, .row h3 {
+    color: #333; /* Títulos em cor escura para melhor leitura no fundo branco */
+    font-weight: 700;
+}
+
+/* Media Query para Menu Mobile */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Esconde por padrão no mobile */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Abaixo do header */
+        left: 0;
+        background: #eaac66;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    nav ul li {
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    nav ul li a {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    nav {
+        padding: 0 1rem;
+    }
+    .logo-img {
+        height: 40px;
+    }
+}
+
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+
+.hero {
+    background: linear-gradient(#f35c04cc, rgba(243, 92, 4, 0.8)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0" width="1200" height="600"/></svg>');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0px;
+}
+
+.hero-cadastro {
+    background-color: #f35c04; 
+    margin-top: 0 !important; 
+    padding-top: 100px; 
+}
+
+.hero-page {
+    background: linear-gradient(135deg, #f88e5e 0%, #f88e5e 100%);
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+}
+
+.hero-content, .signup-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1,
+.hero-page h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p,
+.hero-page p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+
+.cta-buttons {
+display: flex;
+flex-direction: row; 
+gap: 1.5rem; 
+justify-content: center; 
+align-items: center;
+flex-wrap: wrap; 
+margin-top: 2rem;
+}
+
+.cta-buttons .btn-primary, 
+.cta-buttons .btn-primary:focus {
+background-color: #f35c04; 
+border-color: #f35c04;
+color: white;
+font-weight: bold;
+flex: 1 1 200px; 
+max-width: 250px; 
+padding: 1rem 2.5rem;
+font-size: 1.2rem;
+border-radius: 50px; 
+transition: all 0.3s ease; 
+box-shadow: 0 5px 15px rgba(243, 92, 4, 0.4); 
+}
+
+.cta-buttons .btn-primary:hover {
+background-color: #e04b00; 
+border-color: #e04b00;
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(243, 92, 4, 0.6);
+}
+
+.cta-buttons .btn-secondary,
+.cta-buttons .btn-secondary:focus {
+background-color: transparent; 
+color: #f35c04; 
+border: 2px solid #f35c04; 
+font-weight: bold;
+flex: 1 1 200px; 
+max-width: 250px; 
+padding: 1rem 2.5rem;
+font-size: 1.2rem;
+border-radius: 50px; 
+transition: all 0.3s ease;
+box-shadow: none;
+}
+
+.cta-buttons .btn-secondary:hover {
+background-color: #f35c04; 
+color: white; 
+transform: translateY(-3px);
+box-shadow: 0 10px 20px rgba(243, 92, 4, 0.2);
+}
+
+.btn-primary {
+    background: #f35c04 !important;
+    border-color: #f35c04 !important;
+    color: white !important;
+}
+
+
+.btn-secondary {
+    background: #f88e5e;
+    color: white;
+    text-align: center;
+}
+
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+
+.btn-primary::after, .btn-secondary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.15);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    text-align: center;
+}
+
+
+.btn-primary:hover::after, .btn-secondary:hover::after {
+    top: -20%;
+    left: -20%;
+    text-align: center;
+}
+
+
+form fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+form legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+
+.success-message {
+    display: none; 
+    margin-bottom: 1rem;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.footer-professional {
+    background-color: #ffffff; 
+    color: #333333; 
+    padding-top: 5.00rem; 
+    box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.08); 
+}
+
+.footer-heading {
+    color: #f35c04; 
+    font-size: 1.15rem; 
+    margin-bottom: 1rem; 
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px; 
+    width: 30px; 
+    background-color: #f35c04;
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+@media (min-width: 768px) {
+    .footer-heading::after {
+        left: 0;
+        transform: translateX(0);
+    }
+}
+
+.footer-address p,
+.footer-copyright {
+    font-size: 0.9rem; 
+    opacity: 0.8; 
+}
+
+/* Links de Navegação */
+.footer-link {
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-link:hover {
+    color: #f35c04; 
+    text-decoration: underline;
+}
+
+.social-icon {
+    color: #333333; 
+    font-size: 1.3rem; 
+    margin: 0 0.5rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    color: #f35c04; 
+    transform: scale(1.1);
+}
+
+.btn-donate {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.25rem; 
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.p-4 .text-muted {
+    color: #666 !important; 
+}
+
+.footer-divider {
+    border-top: 1px solid #eeeeee; 
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important; 
+}
+
+@media (max-width: 767px) {
+    .footer-professional .row > div {
+        text-align: left !important;
+    }
+    
+    .footer-professional .list-unstyled {
+        padding-left: 0 !important;
+    }
+    
+    .footer-professional .footer-heading {
+        text-align: left !important;
+    }
+
+    .footer-heading::after {
+        left: 0;
+        transform: translateX(0);
+    }
+}
+
