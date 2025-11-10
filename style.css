@@ -129,6 +129,40 @@ section.container .p-4 {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* ===================================================
+   ESTILOS DE VALIDAÇÃO (OBRIGATÓRIO PARA O JS)
+   =================================================== */
+
+/* 1. CAIXA VERDE DE SUCESSO */
+/* Esta é a "janela de popup" que você esperava */
+.success-message {
+    padding: 1rem;
+    background-color: #d1e7dd; /* Verde do Bootstrap */
+    color: #0f5132;
+    border: 1px solid #badbcc;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* 2. BORDA VERMELHA NO INPUT */
+/* É assim que o campo fica vermelho */
+.input-error {
+    border-color: #dc3545 !important; /* Vermelho do Bootstrap */
+    background-color: #fff6f6 !important;
+}
+
+/* 3. TEXTO VERMELHO DE ERRO */
+/* É assim que as "letras" de erro aparecem */
+.error-message {
+    color: #dc3545; /* Vermelho */
+    font-size: 0.9rem; /* 14px */
+    font-weight: bold;
+    margin-top: 5px;
+    display: block;
+}
 
 
 .hero {
@@ -149,14 +183,6 @@ section.container .p-4 {
     background-color: #f35c04; 
     margin-top: 0 !important; 
     padding-top: 100px; 
-}
-
-.hero-page {
-    background: linear-gradient(135deg, #f88e5e 0%, #f88e5e 100%);
-    padding: 8rem 2rem 4rem;
-    text-align: center;
-    color: white;
-    margin-top: 70px;
 }
 
 .hero-content, .signup-section {
@@ -426,5 +452,159 @@ form legend {
         left: 0;
         transform: translateX(0);
     }
+    /* Para destacar o campo com erro */
+.input-error {
+    border: 2px solid #e74c3c; /* Vermelho */
+}
+
+/* A mensagem de erro abaixo do campo */
+.error-message {
+    color: #e74c3c; /* Vermelho */
+    font-size: 0.85em;
+    display: block;
+    margin-top: 5px;
+}
+
+/* A mensagem principal de sucesso */
+.success-message {
+    padding: 15px;
+    background-color: #2ecc71; /* Verde */
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* ===================================================
+   ESTILOS DO POPUP PERSONALIZADO DE SUCESSO
+   =================================================== */
+
+.custom-modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixado na tela */
+    z-index: 1000; /* Acima de todo o resto */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    overflow: auto; /* Habilitar scroll se o conteúdo for muito grande */
+    background-color: rgba(0,0,0,0.5); /* Fundo semi-transparente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    backdrop-filter: blur(3px); /* Efeito de desfoque no fundo */
+}
+
+.custom-modal.show {
+    display: flex; /* Mostrar quando tiver a classe 'show' */
+}
+
+.custom-modal-content {
+    background-color: #f8a984; /* Cor de fundo do seu site */
+    margin: 15% auto; /* 15% do topo e centralizado */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; /* Largura padrão */
+    max-width: 400px; /* Largura máxima */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra para profundidade */
+    position: relative;
+    text-align: center;
+    transform: translateY(-50px); /* Começa um pouco acima */
+    opacity: 0; /* Começa transparente */
+    animation: fadeInScale 0.3s ease-out forwards; /* Animação de entrada */
+}
+
+@keyframes fadeInScale {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* ===================================================
+   ESTILOS DO POPUP PERSONALIZADO (OBRIGATÓRIO)
+   =================================================== */
+
+.custom-modal {
+    /* Esta é a linha mais importante: */
+    display: none; /* << ESCONDE A CAIXINHA POR PADRÃO */
+    
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Fundo escuro */
+    justify-content: center;
+    align-items: center; 
+    backdrop-filter: blur(3px);
+}
+
+/* O JavaScript vai adicionar esta classe .show para mostrar o popup */
+.custom-modal.show {
+    display: flex; /* << MOSTRA A CAIXINHA */
+}
+
+.custom-modal-content {
+    background-color: #f8a984; /* Cor de fundo (a mesma do seu site) */
+    color: white; /* Cor do texto */
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%; 
+    max-width: 400px; /* Largura máxima */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+    
+    /* Animação de entrada */
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: fadeInScale 0.3s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.custom-modal-content h2 {
+    font-weight: bold;
+}
+
+.modal-icon {
+    font-size: 4rem; /* Tamanho do ícone de 'check' */
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Botão 'X' de fechar */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+.close-button:hover {
+    color: #ddd;
+}
+
+/* Botão OK */
+#modal-ok-button {
+    background-color: #f35c04; /* Laranja mais escuro */
+    border-color: #f35c04;
+    color: white;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#modal-ok-button:hover {
+    background-color: #e04b00;
+    border-color: #e04b00;
+}
 }
 
